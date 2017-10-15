@@ -224,10 +224,10 @@ echo '
 					text-align: center;
 				}
 				.formulario::-webkit-scrollbar {
-					width: 0px;
+					width: 2px;
 				}
 				.formulario::-moz-scrollbar {
-					width: 0px;
+					width: 2px;
 				}
 				.formulario * {
 					width: 98%;
