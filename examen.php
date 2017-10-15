@@ -223,6 +223,12 @@ echo '
 
 					text-align: center;
 				}
+				.formulario::-webkit-scrollbar {
+					width: 0px;
+				}
+				.formulario::-moz-scrollbar {
+					width: 0px;
+				}
 				.formulario * {
 					width: 98%;
 				}
