@@ -14,9 +14,9 @@
 		<table>
 			<tr>
 				<th style="width: 5%"><span style="display: inline-block;padding: 10px 0px;">ID</span></th>
-				<th style="width: 10%">Tipo</th>
+				<th style="width: 5%">Tipo</th>
 				<th style="width: 25%">Reactivo</th>
-				<th style="width: 10%">Respuesta</th>
+				<th style="width: 15%">Respuesta</th>
 				<th style="width: 10%">Opc1</th>
 				<th style="width: 10%">Opc2</th>
 				<th style="width: 10%">Opc3</th>
@@ -139,6 +139,7 @@ echo '
 		}
 			table {
 				width: 100%;
+				text-align: center;
 			}
 			table tr {
 				border: 1px solid black;
