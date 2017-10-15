@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 15-10-2017 a las 05:41:27
--- Versión del servidor: 10.1.26-MariaDB
--- Versión de PHP: 7.1.9
+-- Servidor: localhost
+-- Tiempo de generación: 15-10-2017 a las 06:24:08
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -44,8 +42,26 @@ CREATE TABLE `examen` (
 --
 
 INSERT INTO `examen` (`id`, `tipo`, `reactivo`, `respuesta`, `opc1`, `opc2`, `opc3`, `opc4`) VALUES
-(1, 0, '2+2', '4', '1', '2', '3', '5'),
-(2, 1, 'esto', 'res', 'opc1', 'opc2', 'opc3', 'op4 2');
+(1, 1, 'esto', 'res', 'opc1', 'opc2', 'opc3', 'op4 2222'),
+(2, 1, 'esto', 'res', 'opc1', 'opc2', 'opc3', '111op4 2'),
+(3, 0, '', '', '', '', '', ''),
+(4, 0, '', '', '', '', '', ''),
+(5, 0, '', '', '', '', '', ''),
+(6, 0, '', '', '', '', '', ''),
+(7, 0, '', '', '', '', '', ''),
+(8, 0, '', '', '', '', '', ''),
+(9, 0, '', '', '', '', '', ''),
+(10, 0, '', '', '', '', '', ''),
+(11, 0, '', '', '', '', '', ''),
+(12, 0, '', '', '', '', '', ''),
+(13, 0, '', '', '', '', '', ''),
+(14, 0, '', '', '', '', '', ''),
+(15, 0, '', '', '', '', '', ''),
+(16, 0, '', '', '', '', '', ''),
+(17, 0, '', '', '', '', '', ''),
+(18, 0, '', '', '', '', '', ''),
+(19, 0, '', '', '', '', '', ''),
+(20, 0, '', '', '', '', '', '');
 
 --
 -- Índices para tablas volcadas
@@ -65,9 +81,7 @@ ALTER TABLE `examen`
 -- AUTO_INCREMENT de la tabla `examen`
 --
 ALTER TABLE `examen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
