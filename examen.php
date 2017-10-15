@@ -49,10 +49,7 @@ echo '
 			</tr>
 ';
 		}
-
-
-
-
+echo 	'</table>';
 
 if ( isset($_GET['id']) ) {
 	$myid = $_GET['id'];
@@ -66,16 +63,17 @@ echo '
 		<div class="modal">
 			<div class="container">
 				<span class="x" onclick="cerrar()">&times;</span>
-				<form action="php/EditarExamen.php" method="post">
+				<form class="formulario" action="php/EditarExamen.php" method="post">
+
 					<br><br><label>ID:</label>
-					<br><input type="text" name="id" value="'.$row1['id'].'" required>
+					<br><input type="text" name="id" value="'.$row1['id'].'" disabled><input style="width:2%; visibility:hidden;" type="text" name="id" value="'.$row1['id'].'">
 
 					<br><br><label>Tipo:</label>
 					<br><select id="tipo" name="tipo" required>
 						<option value="">-</option>
-						<option value="0">Mul</option>
-						<option value="1">Abi</option>
-						<option value="2">VoF</option>
+						<option value="0">Multiple</option>
+						<option value="1">Abierta</option>
+						<option value="2">Verdadero - Falso</option>
 					</select>
 
 					<br><br><label>Reactivo:</label>
@@ -96,7 +94,7 @@ echo '
 					<br><br><label>Opcion 4</label>
 					<br><input type="text" name="opc4" value="'.$row1['opc4'].'" required>
 
-					<br><br><input type="submit" name="Guardar">
+					<br><br><input class="send" type="submit" name="Guardar">
 
 
 				</form>
@@ -109,9 +107,11 @@ echo '
 }
 
 
+
 		$mysql_con->close();
 		?>
-		</table>
+		
+
 
 
 
@@ -171,22 +171,30 @@ echo '
 
 		}
 			.container {
-				display: block;
+				display: inline-block;
 				box-sizing: border-box;
-				width: 50%;
-				height: 500px;
+				width: 100%;
+				max-width: 500px;
+				height: 100%;
 
-				padding: 10px 10%;
+				position: relative;
+
+				padding: 10px 10px;
 
 				background-color: white;
 
-				text-align: center;
+				left: 50%;
+
+				transform: translateX(-50%);
 			}
 			.container .x {
-				display: block;
+				display: inline-block;
 				box-sizing: border-box;
 
-				padding: 10px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				padding: 6px 10px;
 
 				background-color: red;
 				color: white;
@@ -196,23 +204,50 @@ echo '
 				cursor: pointer;
 
 				opacity: 0.75;
+
+				text-align: right;
 			}
 			.container .x:hover {
 				opacity: 1;
 			}
-			.container form {
-				display: inline-block;
-				box-sizing: border-box;
-				width: 100%;
 
-				border: 1px solid black;
+				.formulario {
+					display: block;
+					box-sizing: border-box;
+					padding: 10px 10%;
+					border: 1px solid transparent;
+					overflow-y: auto;
 
+					width: 100%;
+					height: 100%;
 
-				overflow-y: scroll;
+					text-align: center;
+				}
+				.formulario * {
+					width: 98%;
+				}
+				.formulario .send {
+					display: inline-block;
+					box-sizing: border-box;
+					width: auto;
+					padding: 10px;
 
+					background-color: black;
+					color: white;
 
+					border: none;
 
-			}
+					cursor: pointer;
+
+					opacity: 0.75;
+
+					transition: opacity 0.3s linear;
+
+				}
+				.formulario .send:hover {
+					opacity: 1;
+				}
+
 	</style>
 
 	<script>
