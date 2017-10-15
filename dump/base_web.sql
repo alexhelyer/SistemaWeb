@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 04-09-2017 a las 08:09:14
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 15-10-2017 a las 05:38:36
+-- Versión del servidor: 10.1.26-MariaDB
+-- Versión de PHP: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -43,7 +45,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`id_adm`, `nombre_adm`, `apellidos_adm`, `tipo`, `usuario_adm`, `pass_adm`, `date_login`, `date_logout`, `correo_adm`) VALUES
-(1, 'Administrador', 'Sistema', 'root', 'administrador', '81dc9bdb52d04dc20036dbd8313ed055', '2017-09-04 01:08:32', '2017-08-01 00:00:00', 'alexhelyer7@gmail.com'),
+(1, 'Administrador', 'Sistema', 'root', 'administrador', '81dc9bdb52d04dc20036dbd8313ed055', '2017-10-14 22:36:33', '2017-10-14 23:00:33', 'alexhelyer7@gmail.com'),
 (2, 'Alejandro', 'Martinez', 'root', 'alexmtz', '534b44a19bf18d20b71ecc4eb77c572f', '2017-09-04 01:08:44', '2017-08-01 00:00:00', 'alexhelyer7@gmail.com'),
 (3, 'Jair', 'Moreno', 'root', 'jairmg', '03e6dd4fe209818a8609a7879436c75a', '2017-09-04 01:08:57', '2017-08-01 00:00:00', 'jair.mg.27@gmail.com');
 
@@ -77,6 +79,31 @@ INSERT INTO `alumno` (`id_alumno`, `usuario`, `correo`, `password`, `nombre`, `g
 (5, 'diana', 'diana@hotmail.com', '1234', 'diana', 'femenino', 'veracruz', 11, '2017-05-15'),
 (6, 'peimbert', 'erick@hotmail.com', '12345', 'erick', 'masculino', 'oaxaca', 15, '2017-05-19'),
 (7, 'manolo', 'mano@hotmail.com', '1234', 'manolo', 'masculino', 'veracruz', 11, '2017-05-22');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `examen`
+--
+
+CREATE TABLE `examen` (
+  `id` int(11) NOT NULL,
+  `tipo` int(11) NOT NULL,
+  `reactivo` varchar(90) COLLATE utf8_spanish_ci NOT NULL,
+  `respuesta` varchar(90) COLLATE utf8_spanish_ci NOT NULL,
+  `opc1` varchar(90) COLLATE utf8_spanish_ci NOT NULL,
+  `opc2` varchar(90) COLLATE utf8_spanish_ci NOT NULL,
+  `opc3` varchar(90) COLLATE utf8_spanish_ci NOT NULL,
+  `opc4` varchar(90) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `examen`
+--
+
+INSERT INTO `examen` (`id`, `tipo`, `reactivo`, `respuesta`, `opc1`, `opc2`, `opc3`, `opc4`) VALUES
+(1, 0, '2+2', '4', '1', '2', '3', '5'),
+(2, 1, 'esto', 'res', 'opc1', 'opc2', 'opc3', 'op4 2');
 
 -- --------------------------------------------------------
 
@@ -195,6 +222,12 @@ ALTER TABLE `alumno`
   ADD PRIMARY KEY (`id_alumno`);
 
 --
+-- Indices de la tabla `examen`
+--
+ALTER TABLE `examen`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `reactivos`
 --
 ALTER TABLE `reactivos`
@@ -227,26 +260,38 @@ ALTER TABLE `reactivo_verdadero_falso`
 --
 ALTER TABLE `administrador`
   MODIFY `id_adm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
   MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `examen`
+--
+ALTER TABLE `examen`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `reactivo_abierto`
 --
 ALTER TABLE `reactivo_abierto`
   MODIFY `id_reactivo_abierto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT de la tabla `reactivo_multiple`
 --
 ALTER TABLE `reactivo_multiple`
   MODIFY `id_reactivo_multiple` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `reactivo_verdadero_falso`
 --
 ALTER TABLE `reactivo_verdadero_falso`
   MODIFY `id_reactivo_vf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
