@@ -1,0 +1,343 @@
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-size: 1em;
+		font-family: "houschka_headlight", "Helvetica Neue",Helvetica,Arial,sans-serif;
+	}
+
+	body {
+		/*background-color: rgba(91, 192, 222, 0.1);*/
+		background-color: #FAFAFA;
+	}
+
+	#loading {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #fefefe;
+		z-index: 100;
+	}
+	#loading p {
+		width: 100%;
+		text-align: center;
+		padding: 20px 0px;
+	}
+
+	#main {
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			overflow: hidden;
+			position: relative;
+
+			min-width: 1024px;
+	}
+
+	.barra-lateral {
+		display: block;
+		box-sizing: border-box;
+		width: 20%;
+		height: 100%;
+		background-color: #73C9DC;
+		vertical-align: top;
+		position: fixed;
+		overflow-y: auto;
+		left: -20%;
+
+		z-index: 80;
+	}
+		.menu {
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+		}
+		.menu ul {
+			overflow: hidden;
+			list-style: none;
+		}
+		.menu ul li {
+			width: 100%;
+			display: block;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		}
+		.menu ul li a {
+			color: #FFFFFF;
+			padding: 20px;
+			display: block;
+			text-decoration: none;
+		}
+		.menu ul li a:hover{
+			color: #FFFFFF;
+			background: #2E95B3;
+		}
+		.menu ul li a:focus {
+			color: #FFFFFF;
+		}
+		header nav ul li span {
+			margin-right: 7px;
+		}
+
+	.main_section {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		height: 100%;
+		vertical-align: top;
+		float: right;
+		padding: 20px 5%;
+
+		overflow-y: auto; 
+	}
+			#toggle-menu {
+				display: inline-block;
+				box-sizing: border-box;
+				cursor: pointer;
+				position: fixed;
+				top: 0px;
+				left: 20%;
+				margin: 0px 0px 0px 0px;
+				padding: 10px;
+				font-size: 48px;
+				background-color: #73C9DC;
+				color: white;
+
+				width: 80px;
+				height: 80px;
+
+				text-align: center;
+
+				left: 0%;
+
+				z-index: 90;
+			}
+			/* ESTILOS PARA LA SECCION SUBIR */
+			.type-content {
+				display: block;
+				box-sizing: border-box;
+				width: 100%;
+			}
+				.main_titulo {
+					display: inline-block;
+					box-sizing: border-box;
+					width: 100%;
+					padding: 20px 0px;
+
+					text-align: center;
+					font-size: 2em;
+					font-weight: 500;
+
+					background: black;
+					color: white;
+					position: fixed;
+					top: 0;
+					left: 0;
+
+					height: 80px;
+				}
+				.main_spacing {
+					display: block;
+					width: 100%;
+					height: 80px;
+				}
+				.radio-tipo {
+					display: inline-block;
+					box-sizing: border-box;
+					width: 33.33%;
+				}
+				.radio-tipo label {
+					display: block;
+					box-sizing: border-box;
+					width: 100%;
+					font-size: 1em;
+					font-weight: bold;
+					text-align: center;
+					padding: 30px 0px;
+					cursor: pointer;
+				}
+				.radio-tipo label:hover {
+					border-bottom: 4px solid #DDDDDD;
+				}
+				.radio-tipo input {
+					visibility: hidden;
+				}
+				.type-content div input[type="radio"]:checked + label {
+					border-bottom: 4px solid #DDDDDD;
+				}
+
+			.form-content {
+				display: block;
+				box-sizing: border-box;
+				width: 100%;
+			}
+				.form_type {
+					display: block;
+					box-sizing: border-box;
+					width: 100%;
+					padding: 40px 30%;
+				}
+					
+					.lab_form, .input_form, .sel_form, .txtarea_form {
+						display: inline-block;
+						box-sizing: border-box;
+						width: 50%;
+						padding: 5px 0px;
+						margin: 5px 0px;
+
+						vertical-align: top;
+
+						font-size: 16px;
+					}
+					.lab_form {
+						font-weight: bold;
+						color: #333;
+						text-align: left;
+						padding: 0px 0px;
+					}
+					.input_form {
+						border: 1px solid #5bc0de;
+						outline-color: #337ab7;
+						padding: 3px;
+					}
+					.txtarea_form {
+						height: 100px;
+						resize: none;
+
+						border: 1px solid #5bc0de;
+						outline-color: #337ab7;
+						padding: 3px;
+					}
+
+					.btn-primario {
+						background-color: #337ab7;
+						color: white;
+
+						display: inline-block;
+						box-sizing: border-box;
+						padding: 6px 12px;
+
+						cursor: pointer;
+
+						border: 1px solid transparent;
+						border-radius: 4px;
+
+						-webkit-appearance: button;
+					}
+					.btn-primario:hover {
+						background-color: #286090;
+					}
+					.btn-secundario {
+						background-color: #5bc0de;
+						color: white;
+
+						display: inline-block;
+						box-sizing: border-box;
+						padding: 6px 12px;
+
+						cursor: pointer;
+
+						border: 1px solid transparent;
+						border-radius: 4px;
+
+						-webkit-appearance: button;
+					}
+					.btn-secundario:hover {
+						background-color: #31b0d5;
+					}
+
+					.guardar_boton {
+						display: inline-block;
+						box-sizing: border-box;
+						min-width: 200px;
+						padding: 10px;
+
+						background-color: #5cb85c;
+						border: 1px solid transparent;
+						border-color: #4cae4c;
+						color: white;
+
+						font-size: 16px;
+						text-align: center;
+
+						border-radius: 4px;
+
+						cursor: pointer;
+
+						float: right;
+					}
+					.guardar_boton:hover {
+						background-color: #449d44;
+						border-color: #398439;
+					}
+					.editar_boton {
+						display: inline-block;
+						box-sizing: border-box;
+						min-width: 200px;
+						padding: 10px;
+
+						background-color: #f0ad4e;
+						border: 1px solid transparent;
+						border-color: #eea236;
+						color: white;
+
+						font-size: 16px;
+						text-align: center;
+
+						border-radius: 4px;
+
+						cursor: pointer;
+
+						float: right;
+					}
+					.editar_boton:hover {
+						background-color: #449d44;
+						border-color: #398439;
+						background-color:#ec971f;
+						border-color:#d58512
+					}
+			/* ESTILOS PARA LA SECCION VER */
+
+	/*Estadísticas*/
+	.fecha{
+		margin-left: 25%;
+	}
+
+	.form_editar {
+		padding: 5% 10%;
+		overflow: hidden;
+	}
+
+	.form_labels {
+		box-sizing: border-box;
+		display: block;
+		width: 50%;
+		float: left;
+	}
+	.form_labels:nth-child(1) {
+		padding-left: 0px;
+	}
+
+	.btn_editar{
+		display: inline-block;
+		width: 20%;
+		margin: 0% 40%;
+		margin-bottom: 2% !important;
+	}
+
+	/*		TABLAS: 		*/
+
+	.donut{
+		position: relative;
+	}
+
+	.edit_info {
+		background-color: lightgray;
+	}
+
+
+
+	/*		LOGIN		*/
