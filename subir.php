@@ -165,7 +165,7 @@
           <form class="form_type" action="php/subir_reactivo.php" method="post" id="form_3">
 
             <label class="lab_form"> Seleccione el tema </label><!--
-          /--><select id="sel11" class="sel_form btn-primario" name="tema" onchange="populate(this.id,'sel12')">
+          /--><select id="sel21" class="sel_form btn-primario" name="tema" onchange="populate(this.id,'sel22')">
               <option value="aritmetica">Aritmética</option>
               <option value="algebra">Álgebra</option>
               <option value="geometria">Geometría</option>
@@ -174,7 +174,7 @@
             </select>
 
             <label class="lab_form"> Seleccione el subtema </label><!--
-          /--><select id="sel12" class="sel_form btn-secundario" name="subtema">
+          /--><select id="sel22" class="sel_form btn-secundario" name="subtema">
               <option selected value="naturales">Naturales</option>
               <option selected value="enteros">Enteros</option>
               <option selected value="fraccionarios">Fraccionarios</option>
@@ -209,7 +209,7 @@
     </div>
 
     <script src="js/script-selects.js"></script>
-    <script src="js/script-tabss.js"></script>
+    <script src="js/script-tabs.js"></script>
     <script src="js/script-toggle.js"></script>
 
     <!-- EFECT CARGANDO PAGINA -->
