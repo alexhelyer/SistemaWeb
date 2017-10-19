@@ -84,7 +84,7 @@ echo '
 					</select>
 
 					<br><br><label>Reactivo:</label>
-					<br><input type="text" name="reactivo" value="'.$row1['reactivo'].'" required>
+					<br><textarea name="reactivo" required>'.$row1['reactivo'].'</textarea>
 
 					<br><br><label>Respuesta</label>
 					<br><input type="text" name="respuesta" value="'.$row1['respuesta'].'" required>
@@ -239,6 +239,10 @@ echo '
 				}
 				.formulario * {
 					width: 98%;
+				}
+				.formulario textarea {
+					resize: none;
+					height: 80px;
 				}
 				.formulario .send {
 					display: inline-block;
