@@ -12,7 +12,7 @@
 	require "mysql/mysql.php";
 	$mysql_con->set_charset("utf8");
 
-	$query = " SELECT * FROM alumno WHERE usuario = '$user' AND password = '$pass'; ";
+	$query = " SELECT * FROM alumno WHERE usuario = '$user' AND password = '$pass' OR correo = '$user' AND password = '$pass'; ";
 	$result = $mysql_con->query($query);
 
 	if ( $fila = $result->fetch_assoc() ) {

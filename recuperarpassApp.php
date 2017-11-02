@@ -5,7 +5,7 @@
 	require "mysql/mysql.php";
 	$mysql_con->set_charset("utf8");
 
-	$correo = "alexhelyer7@gmail.com";
+	$correo = "alex@helyer.com";
 	if ( isset($_POST['correo']) )
 		$correo = $_POST['correo'];
 
@@ -80,7 +80,7 @@
 		$mail->Port = 587;
 
 		$mail->From  = $my_email; //Dirección desde la que se enviarán los mensajes.
-		$mail->FromName = "Mather Recovery System";
+		$mail->FromName = "Mathe Recovery System";
 		$mail->AddAddress($correo); // Dirección a la que llegaran los mensajes.
 
 		// Aquí van los datos que apareceran en el correo que reciba
