@@ -18,7 +18,7 @@
 		EnviarCorreo($correo);
 	}
 	else {
-		echo "StatusCode=404";
+		echo "StatusCode=400";
 	}
 
 	$mysql_con->close();

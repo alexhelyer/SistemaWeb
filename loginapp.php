@@ -16,10 +16,18 @@
 	$result = $mysql_con->query($query);
 
 	if ( $fila = $result->fetch_assoc() ) {
-		echo json_encode($fila);
+
+		$activado = $fila['activado']*1;
+
+		if ( $activado ) {
+			echo json_encode($fila);
+		}
+		else {
+			echo '{"id_alumno":"0","usuario":"300","correo":"jair.mg.27@gmail.com","password":"SERVIDOR","nombre":"jair","genero":"masculino","localidad":"mexico","edad":"12","fecha_registro":"2017-05-01"}';
+		}
 	}
 	else {
-		echo '{"id_alumno":"0","usuario":"ERROR","correo":"jair.mg.27@gmail.com","password":"SERVIDOR","nombre":"jair","genero":"masculino","localidad":"mexico","edad":"12","fecha_registro":"2017-05-01"}';
+		echo '{"id_alumno":"0","usuario":"100","correo":"jair.mg.27@gmail.com","password":"SERVIDOR","nombre":"jair","genero":"masculino","localidad":"mexico","edad":"12","fecha_registro":"2017-05-01"}';
 	}
 
 	$mysql_con->close();

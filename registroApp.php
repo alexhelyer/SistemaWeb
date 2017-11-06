@@ -1,5 +1,7 @@
 <?php
 
+
+
 	$nombre = "";
 	if (isset($_POST['nombre']))
 		$nombre = $_POST['nombre'];
@@ -60,16 +62,127 @@
 		}
 		else {			
 			//El usuario no existe. Lo registramos.
-			$query = " INSERT INTO alumno (usuario, correo, password, nombre, genero, localidad, edad, fecha_registro) VALUES ('$usuario', '$correo', '$password', '$nombre', '$genero', '$localidad', '$edad', '$fecha_registro'); ";
+			$query = " INSERT INTO alumno (usuario, correo, password, nombre, genero, localidad, edad, fecha_registro, activado) VALUES ('$usuario', '$correo', '$password', '$nombre', '$genero', '$localidad', '$edad', '$fecha_registro', 0); ";
 			$insert = $mysql_con->query($query);
 			echo "1: Se registro nuevo usuario";
+
+			EnviarCorreo($correo);
 			//echo "1";
 		}
 	}
-
-
-
 	$mysql_con->close();
 
 
+
+	function EnviarCorreo($to_email) {
+
+		$correo = $to_email;
+		
+		require("includes/class.phpmailer.php");
+		$mail = new PHPMailer();
+
+		$my_email = "unlockhelyer@gmail.com";
+		$my_pass = "alex123456";
+
+		$mail->IsSMTP();
+		$mail->Host = "smtp.gmail.com";
+		$mail->SMTPDebug = 2;
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = "tls";
+		$mail->Port = 587;
+
+		$mail->From  = $my_email; //Dirección desde la que se enviarán los mensajes.
+		$mail->FromName = "Bienvenido a Mathe";
+		$mail->AddAddress($correo); // Dirección a la que llegaran los mensajes.
+
+		// Aquí van los datos que apareceran en el correo que reciba
+		$mail->CharSet = "UTF-8";
+		$mail->WordWrap = 50;
+		$mail->IsHTML(true);
+		$mail->Subject  =  "Comentario recibido a traves del Sitio Web";
+		$mail->Body     =  '
+			<!DOCTYPE html>
+			<html lang="es_MX">
+			<head>
+				<meta charset="UTF-8">
+				<title>Registro</title>
+			</head>
+			<body>
+
+				<div class="container">
+					<h1 class="titulo">¡Te damos la Bienvenida!</h1>
+					<br><br>
+					<p>Gracias por registrarte en Mathe, la aplicación que te permite realizar ejercicios matematicos para mejorar tus habilidades. Presiona en el siguiente boton para activar tu cuenta.</p>
+
+					<a class="btn-activar" href="https://myappmate.000webhostapp.com/activarCuenta.php?email='.$correo.'&token='.md5($correo).'&flag=a89c4e9546c58a6bf0e96c634cd7faad">Activar Cuenta</a>
+
+					<p>Recibe un saludo por parte del equipo de Mathe.</p>
+
+					
+				</div>
+				
+			</body>
+			<style>
+				* {
+					padding: 0;
+					margin: 0;
+				}
+				body {
+					background-color: #fefefe;
+				}
+					.container {
+						display: block;
+						box-sizing: border-box;
+						width: 80%;
+						margin: 3% 10%;
+					}
+						.titulo {
+							background-color: black;
+							color: white;
+							padding: 10px 20px;
+						}
+					.container p {
+						padding: 10px 20px;
+
+					}
+						.btn-activar {
+							display: inline-block;
+							box-sizing: border-box;
+							margin-left: 20px;
+							padding: 10px 20px;
+
+							background-color: #4CAF50;
+							color: white;
+
+							text-decoration: none;
+
+							transition: all 0.3s ease;
+						}
+						.btn-activar:hover {
+							background-color: #3e8e41;
+						}
+			</style>
+			</html>
+		';
+
+
+		// Datos del servidor SMTP
+		$mail->Username = $my_email;  // Correo Electrónico
+		$mail->Password = $my_pass; // Contraseña
+
+		if ($mail->Send()) {
+			//Actualizar contraseña.
+			echo "StatusCode=200";
+		}
+		else {
+			echo "StatusCode=100";
+		}
+
+	}
+
+
 ?>
+
+
+
+
