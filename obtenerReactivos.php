@@ -22,7 +22,7 @@
 
 	$query = " SELECT * FROM reactivo_abierto WHERE grado = 1 AND nivel = 1 AND subtema = 'enteros'; ";
 
-	if ( $tipo == 1 ) {
+	if ( $tipo == 0 ) {
 		$query = " SELECT * FROM reactivo_multiple WHERE grado = $grado AND nivel = $nivel AND subtema = '$subtema'; ";
 	}
 	else if ( $tipo == 2 ) {

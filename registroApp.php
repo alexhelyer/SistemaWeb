@@ -62,7 +62,7 @@
 		}
 		else {			
 			//El usuario no existe. Lo registramos.
-			$query = " INSERT INTO alumno (usuario, correo, password, nombre, genero, localidad, edad, fecha_registro, activado) VALUES ('$usuario', '$correo', '$password', '$nombre', '$genero', '$localidad', '$edad', '$fecha_registro', 0); ";
+			$query = " INSERT INTO alumno (usuario, correo, password, nombre, genero, localidad, edad, fecha_registro, activado) VALUES ('$usuario', '$correo', '$password', '$nombre', '$genero', '$localidad', '$edad', '$fecha_registro', 1); ";
 			$insert = $mysql_con->query($query);
 			echo "1: Se registro nuevo usuario";
 
