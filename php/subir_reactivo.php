@@ -16,7 +16,7 @@
 		$fecha = date("Y-m-d");
 		//echo $tema.",".$subtema.",".$grado.",".$nivel.",".$reactivo.",".$respuesta;
 
-		$query ="INSERT INTO reactivo_verdadero_falso (tema,subtema,grado,nivel,reactivo,respuesta,visto,fecha) VALUES ('".$tema."', '".$subtema."', ".$grado.", ".$nivel.", '".$reactivo."', ".$respuesta.", ".$visto.", '".$fecha."');";
+		$query ="INSERT INTO reactivo_verdadero_falso (tema,subtema,grado,nivel,reactivo,respuesta,visto,fecha) VALUES ('".$tema."', '".$subtema."', ".$grado.", ".$nivel.", '".$reactivo."', '".$respuesta."', ".$visto.", '".$fecha."');";
 
 
 
@@ -40,12 +40,13 @@
 		$incorrecta1 = $_POST["inco_1"];
 		$incorrecta2 = $_POST["inco_2"];
 		$incorrecta3 = $_POST["inco_3"];
+		$incorrecta4 = $_POST["inco_4"];
 		$visto = 0;
 		date_default_timezone_set('America/Mexico_City');
 		$fecha = date("Y-m-d");
 		//echo $tema.",".$subtema.",".$grado.",".$nivel.",".$reactivo.",".$respuesta;
 
-		$query ="INSERT INTO reactivo_multiple (tema,subtema,grado,nivel,reactivo,respuesta,incorrecta1,incorrecta2,incorrecta3,visto,fecha) VALUES ('".$tema."', '".$subtema."', ".$grado.", ".$nivel.", '".$reactivo."', '".$respuesta."', '".$incorrecta1."', '".$incorrecta2."', '".$incorrecta3."', ".$visto.", '".$fecha."');";
+		$query ="INSERT INTO reactivo_multiple (tema,subtema,grado,nivel,reactivo,respuesta,incorrecta1,incorrecta2,incorrecta3,incorrecta4,visto,fecha) VALUES ('".$tema."', '".$subtema."', ".$grado.", ".$nivel.", '".$reactivo."', '".$respuesta."', '".$incorrecta1."', '".$incorrecta2."', '".$incorrecta3."', '".$incorrecta4."', ".$visto.", '".$fecha."');";
 
 
 

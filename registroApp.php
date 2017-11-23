@@ -1,7 +1,5 @@
 <?php
 
-
-
 	$nombre = "";
 	if (isset($_POST['nombre']))
 		$nombre = $_POST['nombre'];
@@ -48,8 +46,8 @@
 
 	if ( $row = $result->fetch_assoc() ) {
 		//El usuario ya fue registrado.
-		echo "-1: !El usuario ya existe¡";
-		//echo "-1";
+		//echo "-1: !El usuario ya existe¡";
+		echo "100";
 	}
 	else {
 		//Verificamos el correo.
@@ -57,14 +55,18 @@
 		$result = $mysql_con->query($query);
 		if ( $row = $result->fetch_assoc() ) {
 			//El correo ya fue registrado.
-			echo "0: !El correo ya fue registrado¡";
+			echo "150";
 			//echo "0";
 		}
 		else {			
 			//El usuario no existe. Lo registramos.
 			$query = " INSERT INTO alumno (usuario, correo, password, nombre, genero, localidad, edad, fecha_registro, activado) VALUES ('$usuario', '$correo', '$password', '$nombre', '$genero', '$localidad', '$edad', '$fecha_registro', 1); ";
 			$insert = $mysql_con->query($query);
-			echo "1: Se registro nuevo usuario";
+
+			//Le creamos la tabla donde guardaremos su progreso
+			$query = " INSERT INTO datos (usuario, puntos, perfil, promedio, progreso, efectividad) VALUES ('$usuario', 0, 1, '0-0', '00-00-00-00-00', '0-0-0'); ";
+			$insert = $mysql_con->query($query);
+			echo "200";
 
 			EnviarCorreo($correo);
 			//echo "1";
@@ -112,9 +114,10 @@
 				<div class="container">
 					<h1 class="titulo">¡Te damos la Bienvenida!</h1>
 					<br><br>
-					<p>Gracias por registrarte en Mathe, la aplicación que te permite realizar ejercicios matematicos para mejorar tus habilidades. Presiona en el siguiente boton para activar tu cuenta.</p>
+					<p>Gracias por registrarte en Mathe, la aplicación que te permite realizar ejercicios matematicos para mejorar tus habilidades.</p>
+					<!--<p>Gracias por registrarte en Mathe, la aplicación que te permite realizar ejercicios matematicos para mejorar tus habilidades. Presiona en el siguiente boton para activar tu cuenta.</p>-->
 
-					<a class="btn-activar" href="https://myappmate.000webhostapp.com/activarCuenta.php?email='.$correo.'&token='.md5($correo).'&flag=a89c4e9546c58a6bf0e96c634cd7faad">Activar Cuenta</a>
+					<!--<a class="btn-activar" href="https://myappmate.000webhostapp.com/activarCuenta.php?email='.$correo.'&token='.md5($correo).'&flag=a89c4e9546c58a6bf0e96c634cd7faad">Activar Cuenta</a>-->
 
 					<p>Recibe un saludo por parte del equipo de Mathe.</p>
 

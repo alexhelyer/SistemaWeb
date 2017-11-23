@@ -23,11 +23,11 @@
 			echo json_encode($fila);
 		}
 		else {
-			echo '{"id_alumno":"0","usuario":"300","correo":"jair.mg.27@gmail.com","password":"SERVIDOR","nombre":"jair","genero":"masculino","localidad":"mexico","edad":"12","fecha_registro":"2017-05-01"}';
+			echo '{"id_alumno":"12","usuario":"300","correo":"alexhelyer7@gmail.com","password":"827ccb0eea8a706c4c34a16891f84e7b","nombre":"Alejandro","genero":"Masculino","localidad":"CDMX","edad":"11","fecha_registro":"2017-11-05","nivel":"1","activado":"1"}';
 		}
 	}
 	else {
-		echo '{"id_alumno":"0","usuario":"100","correo":"jair.mg.27@gmail.com","password":"SERVIDOR","nombre":"jair","genero":"masculino","localidad":"mexico","edad":"12","fecha_registro":"2017-05-01"}';
+		echo '{"id_alumno":"12","usuario":"100","correo":"alexhelyer7@gmail.com","password":"827ccb0eea8a706c4c34a16891f84e7b","nombre":"Alejandro","genero":"Masculino","localidad":"CDMX","edad":"11","fecha_registro":"2017-11-05","nivel":"1","activado":"1"}';
 	}
 
 	$mysql_con->close();

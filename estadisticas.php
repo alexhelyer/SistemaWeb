@@ -25,13 +25,13 @@
 	$num_mujeres = 0;
 	$num_hombres = 0;
 
-	$query = " SELECT COUNT(*) as 'total' FROM alumno WHERE genero = 'masculino' AND fecha_registro>='".$fechainicio."'AND fecha_registro<='".$fechatermino."'; ";
+	$query = " SELECT COUNT(*) as 'total' FROM alumno WHERE genero = 'Masculino' AND fecha_registro>='".$fechainicio."'AND fecha_registro<='".$fechatermino."'; ";
 	$result = $mysql_con->query($query);
 
 	if ( $fila = $result->fetch_assoc() )
 		$num_hombres = $fila['total'];
 
-	$query = " SELECT COUNT(*) as 'total' FROM alumno WHERE genero = 'femenino' AND fecha_registro>='".$fechainicio."'AND fecha_registro<='".$fechatermino."'; ";
+	$query = " SELECT COUNT(*) as 'total' FROM alumno WHERE genero = 'Femenino' AND fecha_registro>='".$fechainicio."'AND fecha_registro<='".$fechatermino."'; ";
 	$result = $mysql_con->query($query);
 
 	if ( $fila = $result->fetch_assoc() )

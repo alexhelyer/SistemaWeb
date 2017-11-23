@@ -97,8 +97,8 @@
             <label class="lab_form"> Respuesta </label><!--
           /--><select class="sel_form btn-primario" name="respuesta" required>
               <option value="">-----</option>
-              <option value="1">Verdadero</option>
-              <option value="0">Falso</option>
+              <option value="verdadero">Verdadero</option>
+              <option value="falso">Falso</option>
             </select>
 
             <br><br><input type="submit" value="Guardar Reactivo" class="guardar_boton" name="enviar_verdadero_falso">
@@ -157,6 +157,9 @@
 
             <label class="lab_form"> Incorrecta 3 </label><!--
           /--><input class="input_form" type="text" name="inco_3" required>
+
+            <label class="lab_form"> Incorrecta 4 </label><!--
+          /--><input class="input_form" type="text" name="inco_4" required>
 
             <br><br><input type="submit" value="Guardar Reactivo" class="guardar_boton" name="enviar_opcion_multiple">
           </form>
