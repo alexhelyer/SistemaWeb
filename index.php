@@ -1,8 +1,8 @@
 <?php
-  session_start();
-  if(isset($_SESSION['user'])) {
-    header( "Location: subir.php" ) ;
-  }
+	session_start();
+	if(isset($_SESSION['user'])) {
+		header( "Location: subir.php" );
+	}
 ?>
 <!DOCTYPE html>
 <html lang="es-MX">
