@@ -10,6 +10,7 @@
 
   <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.png"/>
       <title> SUBIR </title>
       <script src="js/jquery.min.js"></script>
       <link rel="stylesheet" href="css/iconos.css">

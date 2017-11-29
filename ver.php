@@ -8,6 +8,7 @@
 <html lang="es-MX">
 	<head>
 		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="favicon.png"/>
 		<title> VER </title>
 		<script src="js/jquery.min.js"></script>
 		<link rel="stylesheet" href="css/iconos.css">
